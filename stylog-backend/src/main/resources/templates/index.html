@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!--노치 포함 전체 화면을 사용하는 웹 레이아웃-->
+
+    <!-- 아이콘(FontAwesome) 가져오기 -->
+    <script src="https://kit.fontawesome.com/a10a255d3b.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome 6 Free CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- css 가져오기-->
+    <link rel="stylesheet" th:href="@{/css/header.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/view_feed_one.css}" type="text/css" />
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+
+    <title>Stylog</title>
+</head>
+
+<body>
+    <main class="upload_wrapper container">
+        <section>			
+			<h2 th:text="|안녕하세요, ${nickname}님!|"></h2>
+        </section>
+        <div class="gnb_wrapper">
+            <button class="gnb-btn home" onclick="">
+                <span class="fa-solid fa-house gnt-icn"></span>
+            </button>
+            <button class="gnb-btn explore" onclick="">
+                <span class="fa-regular fa-compass gnt-icn"></span>
+            </button>
+            <button class="gnb-btn upload" onclick="">
+                <span class="fa-regular fa-square-plus gnt-icn"></span>
+            </button>
+            <button class="gnb-btn bookmark" onclick="">
+                <span class="fa-regular fa-bookmark gnt-icn"></span>
+            </button>
+            <button class="gnb-btn profile" onclick="">
+                <img th:src="@{/img/image.png}" alt="프로필이미지" class="profile-img"/> <!--테스트용 이미지-->
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"> <!--타임리프 네임스페이스 추가-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> <!--노치 포함 전체 화면을 사용하는 웹 레이아웃-->
+
+    <!-- 아이콘(FontAwesome) 가져오기 -->
+    <script src="https://kit.fontawesome.com/a10a255d3b.js" crossorigin="anonymous"></script>
+
+    <!-- css 가져오기-->
+    <link rel="stylesheet" th:href="@{/css/header.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/sign_up.css}" type="text/css" />
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+
+    <title>Stylog</title>
+</head>
+
+<body>
+    <main class="login_wrapper container">
+        <section>
+            <div class="logo_box">
+                <img th:src="@{/img/logo.png}" alt="logo_img" class="logo_img">
+            </div>
+            
+            <div class="logo-subtext_box">
+                <span class="logo-subtext">모든 순간을 나답게,</span>
+                <span class="logo-subtext">Stylog에서 코디를 만나보세요.</span>
+            </div>
+
+			<!-- 오류 메세지 -->
+			<p th:if="${errorMessage}" th:text="${errorMessage}" style="color: red; margin-bottom: 10px;"></p>
+			
+			<!-- 타임리프 기반 폼 -->
+            <form th:action="@{/stylog/signup}" th:object="${user}" method="POST">
+                <div class="ID_wrapper input_wrapper">
+                    <fieldset class="ID_field">
+                        <input type="text" placeholder="이메일" class="ID_field_text" th:field="*{email}" />
+                    </fieldset>
+                </div>
+                <div class="PW_wrapper input_wrapper">
+                    <fieldset class="PW_field">
+                        <input type="password" placeholder="비밀번호 (6자 이상)" class="PW_field_text" th:field="*{password}" />
+                    </fieldset>
+                </div>
+                <div class="name_wrapper input_wrapper">
+                    <fieldset class="name_field">
+                        <input type="text" placeholder="이름" class="name_field_text" th:field="*{username}" />
+                    </fieldset>
+                </div>
+                <div class="nickname_wrapper input_wrapper">
+                    <fieldset class="nickname_field">
+                        <input type="text" placeholder="닉네임" class="nickname_field_text" th:field="*{nickname}" />
+                    </fieldset>
+                </div>
+                <div class="phone_wrapper input_wrapper">
+                    <fieldset class="phone_field">
+                        <input type="text" placeholder="전화번호" class="phone_field_text" th:field="*{phoneNumber}" />
+                    </fieldset>
+                </div>
+    
+                <div class="finish_signup_wrapper">
+                    <button class="finish_signup" type="submit">
+                        <span class="finish_signup_title"> 회원가입 </span>
+                    </button>
+                </div>
+            </form>
+    
+            <div class="signup_or">
+                <div class="border">
+                    <span class="signup_or_title">또는</span>
+                </div>
+            </div>
+    
+            <div class="goto_login">
+                <span>이미 회원이신가요?&nbsp;</span>
+                <a th:href="@{/stylog/login}">
+                    <span class="member_login_title"> 로그인 </span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer> <!--이 부분은 footer로 뜯어내기-->
+        <span>Stylog 소개</span>
+        <span>약관</span>
+        <span>&copy;2025Stylog그로위즈</span>
+    </footer>
+</body>
+</html>

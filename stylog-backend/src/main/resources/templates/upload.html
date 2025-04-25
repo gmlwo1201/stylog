@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!--노치 포함 전체 화면을 사용하는 웹 레이아웃-->
+
+    <!-- 아이콘(FontAwesome) 가져오기 -->
+    <script src="https://kit.fontawesome.com/a10a255d3b.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome 6 Free CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- css 가져오기-->
+    <link rel="stylesheet" th:href="@{/css/header.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/css/upload.css}" type="text/css" />
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+
+    <title>Stylog</title>
+</head>
+
+<body>
+    <main class="upload_wrapper container">
+        <section>
+            <div class="top_bar">
+                    <span class="fa-solid fa-x close_icon"></span>
+                    <span class="bar-title bold">새 게시물</span>
+            </div>
+
+            <form method="POST" th:action="@{/stylog/upload}" enctype="multipart/form-data">
+                <div class="image_container">
+                    <input type="file" name="image" accept="image/*" hidden/>
+                    <div class="img-preview"></div>
+                    <span class="fa-solid fa-circle-plus add-icon"></span>
+                </div>    
+                <div class="desc_wrapper input_wrapper">
+                    <fieldset class="desc_field">
+                        <legend>설명</legend>
+                        <textarea placeholder="코디에 대한 설명 추가..." class="desc_text" name="content"></textarea>
+                    </fieldset>
+                </div>
+                <div class="tag_wrapper input_wrapper">
+                    <fieldset class="tag_field">
+                        <legend>해시태그 선택</legend>
+                        <!-- 나중에 체크박스로 변경할 것임. 그냥 보여주기만 하는 거-->
+                        <div class="tag-row">
+                            <span class="tag-option">봄</span>
+                            <span class="tag-option">여름</span>
+                            <span class="tag-option">가을</span>
+                            <span class="tag-option">겨울</span>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tag-option">꾸안꾸</span>
+                            <span class="tag-option">러블리</span>
+                            <span class="tag-option">스트릿</span>
+                            <span class="tag-option">Y2K</span>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tag-option">데님</span>
+                            <span class="tag-option">원피스</span>
+                            <span class="tag-option">가디건</span>
+                            <span class="tag-option">코트</span>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tag-option">캠퍼스룩</span>
+                            <span class="tag-option">하객룩</span>
+                            <span class="tag-option">데이트룩</span>
+                            <span class="tag-option">홈웨어</span>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tag-option">33</span>
+                            <span class="tag-option">44</span>
+                            <span class="tag-option">55</span>
+                            <span class="tag-option">66</span>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="info_wrapper input_wrapper">
+                    <fieldset class="info_field">
+                        <legend>제품 정보 입력</legend>
+                        <input type="text" placeholder="브랜드, 제품 구매 링크 등" class="name_field_text" name="products-info" />
+                    </fieldset>
+                </div>
+
+                <div class="upload-btn-wrapper">
+                    <button type="submit" class="upload-btn">
+                        <span class="upload-btn-text"> 게시물 업로드 </span>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+	
+	<script th:src="@{/js/upload.js}"></script>
+</body>
+
+</html>

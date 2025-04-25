@@ -1,0 +1,143 @@
+.upload_wrapper section {
+  width:100%;
+  height:fit-content;
+  margin:0 auto;
+  box-sizing: border-box;
+}
+
+.top_bar {
+  position: sticky;
+  top:0;
+  z-index: 999;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding:0 16px;
+  gap:15px;
+  border-bottom: 1px solid #CCC;
+}
+
+.close_icon {
+  font-size: 30px;
+  color:black;
+  margin:0 5px;
+}
+
+.bar-title {
+  font-size: 25px;
+}
+
+/*이미지 업로드*/
+.image_container {
+  width: 100%;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 15px;
+}
+
+.image_container .img-preview {
+  width: 100%;
+  height: 100%;
+  background-color: beige;
+}
+
+.image_container .add-icon {
+  position: absolute;
+  font-size: 100px;
+  left: calc(50% - 50px);
+  color:rgba(0,0,0,0.5);
+}
+
+.input_wrapper {
+  width:90%;
+  margin:0 auto;
+}
+
+.input_wrapper fieldset{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border:none;
+  outline:none;
+  padding:0;
+  margin-bottom: 10px;
+}
+
+.input_wrapper fieldset legend {
+  font-size: 18px;
+  margin-bottom:7px;
+}
+
+.input_wrapper fieldset textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  font-size: 17px;
+  border:none;
+  outline: none;
+}
+
+.input_wrapper fieldset input {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  font-size: 17px;
+  border:none;
+  outline: none;
+}
+
+
+
+/*나중에 고칠 부분*/
+.tag-row {
+  width: 100%;
+  margin-top:3px;
+  margin-bottom: 10px;
+}
+.tag-option {
+  font-size: 17px;
+  line-height: 17px;
+  background-color: beige;
+  padding:2px 10px;
+  border-radius: 10px;
+}
+
+
+.upload-btn-wrapper {
+  clear: both;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  bottom: 1px;
+  background-color: white;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); ;
+}
+
+.upload-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 45px;
+  background-color: #151515;
+  border:none;
+  margin-top:10px;
+  border-radius: 10px;
+}
+
+.upload-btn-text {
+  display: flex;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: bold;
+}

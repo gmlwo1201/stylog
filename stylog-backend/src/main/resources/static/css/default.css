@@ -1,0 +1,38 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: max-content;
+  max-width: 430px; /*모바일용 최대 너비*/
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding:0;
+}
+
+span.fa-solid { /*아이콘용*/
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+}
